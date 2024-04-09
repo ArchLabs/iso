@@ -1,0 +1,16 @@
+@theme "archlabs"
+
+configuration {
+	modi: "drun,run,window,ssh";
+	kb-cancel: "Escape,Control+g,Control+bracketleft";
+  timeout {
+      action: "kb-cancel";
+      delay:  0;
+  }
+  filebrowser {
+      directories-first: true;
+      sorting-method:    "name";
+  }
+}
+
+// vim:ft=css

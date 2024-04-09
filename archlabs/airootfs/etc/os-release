@@ -1,0 +1,9 @@
+NAME="ArchLabs"
+ID=ArchLabs
+ID_LIKE="arch"
+VERSION_ID=2023.06.07
+PRETTY_NAME="ArchLabs Linux"
+ANSI_COLOR="0;36"
+HOME_URL="https://archlabslinux.com"
+SUPPORT_URL="https://forum.archlabslinux.com/"
+BUG_REPORT_URL="https://bitbucket.org/archlabslinux"

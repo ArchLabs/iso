@@ -1,0 +1,34 @@
+#!/bin/sh
+
+pkill sxhkd
+pkill lemonbar
+sxhkd -c "$HOME/.config/dk/sxhkdrc" &
+bar 2>/dev/null &
+
+# adjust border widths based on the DPI of the monitor
+px=$(xrandr | grep ' connected' | tail -n1 | grep -o '[0-9]\+x[0-9]\+' | cut -d'x' -f2)
+mm=$(xrandr | grep ' connected' | tail -n1 | grep -o '[0-9]\+mm' | tail -n1 | sed 's/mm//')
+dpi=$(( (px / mm) * 25 ))
+
+if [ $dpi -ge 140 ]; then
+	border_width=5
+	border_outer_width=3
+elif [ $dpi -ge 120 ]; then
+	border_width=4
+	border_outer_width=2
+else
+	border_width=2
+	border_outer_width=1
+fi
+
+dkcmd set numws=4
+dkcmd set ws=_ apply gap=10
+dkcmd set border width=$border_width outer_width=$border_outer_width
+
+if hash notify-send > /dev/null 2>&1; then
+	(
+	sleep 2 && notify-send -t 0 -u critical \
+		"Binds" \
+		"\---------------------------\nAlt-Shift-Enter -- Terminal\nAlt-p           -- Launcher\n---------------------------\n\nMore in ~/.config/dk/sxhkdrc"
+	) &
+fi

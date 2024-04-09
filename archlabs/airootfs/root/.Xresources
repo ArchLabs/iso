@@ -1,0 +1,31 @@
+! Base colors
+*.foreground:  #E1E1E1
+*.background:  #1C2023
+*.cursorColor: #778899
+
+*.color0:  #1C2023
+*.color1:  #BF616A
+*.color2:  #A3BE8C
+*.color3:  #EBCB8B
+*.color4:  #8FA1B3
+*.color5:  #B48EAD
+*.color6:  #96B5B4
+*.color7:  #E1E1E1
+*.color8:  #919BA0
+*.color9:  #BF616A
+*.color10: #A3BE8C
+*.color11: #EBCB8B
+*.color12: #8FA1B3
+*.color13: #B48EAD
+*.color14: #96B5B4
+*.color15: #C0C5CE
+
+! xterm
+xterm*termName: xterm-256color
+xterm*font: xos4 Terminus
+xterm*faceName: xos4 Terminus:size=12
+xterm*loginShell: true
+xterm*vt100*geometry: 90x34
+xterm*saveLines: 2000
+xterm*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48
+xterm*eightBitInput: false
